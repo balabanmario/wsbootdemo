@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "hello.myaop",
+      "type": "java.lang.Boolean",
+      "description": "Description for hello.prefix.myaop."
+    }
+  ] }

@@ -16,6 +16,17 @@ public class HelloProperties {
 	 */
 	private String suffix = "!";
 
+	private boolean myaop = false;
+
+	public boolean isMyaop() {
+		return myaop;
+	}
+
+	public void setMyaop(boolean myaop) {
+		this.myaop = myaop;
+	}
+
+
 	public String getPrefix() {
 		return prefix;
 	}

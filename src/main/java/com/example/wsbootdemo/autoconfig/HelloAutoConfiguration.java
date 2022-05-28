@@ -1,5 +1,6 @@
 package com.example.wsbootdemo.autoconfig;
 
+import com.example.wsbootdemo.autoconfig.aop.HelloServiceAspect;
 import com.example.wsbootdemo.autoconfig.beans.ConsoleHelloService;
 import com.example.wsbootdemo.autoconfig.beans.HelloProperties;
 import com.example.wsbootdemo.autoconfig.beans.HelloService;
@@ -27,6 +28,13 @@ public class HelloAutoConfiguration {
 	public HelloService helloService() {
 		return new ConsoleHelloService(this.properties.getPrefix(),
 				this.properties.getSuffix());
+	}
+
+	@Bean
+	@ConditionalOnMissingBean
+	@ConditionalOnProperty(name = "hello.myaop", havingValue ="true")
+	public HelloServiceAspect helloServiceAspect() {
+		return new HelloServiceAspect();
 	}
 
 }
